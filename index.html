@@ -1,7 +1,60 @@
 <!DOCTYPE html>
 <html>
+    <img src="^1^" alt="Artificial Intelligence" width="500" height="300">
 <body>
-<h1>Hello World</h1>
-<p>I'm hosted with GitHub Pages.</p>
+    <style>
+        body {
+          background-color: purple;
+          color: yellow;
+        }
+    </style>
+<h1>Hi, I'm John Doe</h1>
+<p>I'm a data scientist and AI enthusiast who loves to learn new things and solve problems.</p>
+<h2>My Skills</h2>
+<ul>
+  <li>Python</li>
+  <li>R</li>
+  <li>SQL</li>
+  <li>TensorFlow</li>
+  <li>PyTorch</li>
+</ul>
+<h2>My Interests</h2>
+<ol>
+  <li>Machine learning</li>
+  <li>Natural language processing</li>
+  <li>Computer vision</li>
+  <li>Reinforcement learning</li>
+  <li>Generative models</li>
+</ol>
+<h2>Contact Me</h2>
+<p>You can reach me at <a href="mailto:john.doe@example.com">john.doe@example.com</a> or follow me on <a href="https://twitter.com/john_doe">Twitter</a>.</p>
+<script>
+    // Replace USERNAME with your GitHub username
+    const username = "JhonHarry";
+    // Get the element where the repo list will be displayed
+    const repoList = document.getElementById("repo-list");
+    // Fetch the data from the GitHub API
+    fetch(`https://api.github.com/users/${username}/repos`)
+      .then((response) => response.json())
+      .then((data) => {
+        // Loop through the data and create a list item for each repo
+        for (let repo of data) {
+          // Create a list item element
+          let li = document.createElement("li");
+          // Create a link element
+          let a = document.createElement("a");
+          // Set the link text to the repo name
+          a.textContent = repo.name;
+          // Set the link href to the repo URL
+          a.href = repo.html_url;
+          // Append the link to the list item
+          li.appendChild(a);
+          // Append the list item to the repo list
+          repoList.appendChild(li);
+        }
+      });
+  </script>
+  
 </body>
 </html>
+
